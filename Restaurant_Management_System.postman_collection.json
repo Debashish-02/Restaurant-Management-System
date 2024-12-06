@@ -1,0 +1,1806 @@
+{
+	"info": {
+		"_postman_id": "62358834-9132-45c6-bacd-d4582c52a1a4",
+		"name": "Restaurant_Management_System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34941166"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "One-To-Many Mapping",
+					"item": [
+						{
+							"name": "AddExistingFoodOrderToExistingCustomer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/addExistingFoodOrderToExistingCustomer?customerId=1&foodOrderId=13",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addExistingFoodOrderToExistingCustomer"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "1"
+										},
+										{
+											"key": "foodOrderId",
+											"value": "13"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNewFoodOrderToExistingCustomer",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"foodName\":\"Masala Coke\",\r\n    \"foodPrice\":80,\r\n\t\"foodQuantity\":1,\r\n    \"foodDiscount\":0,\r\n\t\"foodGST\":18\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/addNewFoodOrderToExistingCustomer?customerId=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addNewFoodOrderToExistingCustomer"
+									],
+									"query": [
+										{
+											"key": "customerId",
+											"value": "2"
+										},
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SaveCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerName\": \"Mrs Jr Jr Adolf\" ,\r\n\t\"customerPhone\": 9599212126 ,\r\n\t\"customerFeedback\": \"ok\" ,\r\n\t\"customerEmail\":\"hailgermany5gmail.com\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/saveCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saveCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateCustomer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customerName\": \"AAA\" ,\r\n\t\"customerPhone\": 9568426594 ,\r\n\t\"customerFeedback\": \"medium\" ,\r\n\t\"customerEmail\":\"aaa2gmail.com\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateCustomer?oldId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateCustomer"
+							],
+							"query": [
+								{
+									"key": "oldId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchCustomerById?Id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchCustomerById"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAllCustomer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchAllCustomer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchAllCustomer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCustomer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteCustomer?customerId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteCustomer"
+							],
+							"query": [
+								{
+									"key": "customerId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Owner",
+			"item": [
+				{
+					"name": "SaveOwner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ownerName\": \"Debashish\",\r\n\t\"ownerEmail\": \"debashish@gmail.com\" ,\r\n\t\"ownerNetWorth\": 1000000 ,\r\n\t\"ownerPhone\": 8989898989\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/saveOwner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saveOwner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateOwner",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ownerName\": \"AAA\",\r\n\t\"ownerEmail\": \"aaa@gmail.com\" ,\r\n\t\"ownerNetWorth\": 15000000 ,\r\n\t\"ownerPhone\": 896562365\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateOwner?oldId=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateOwner"
+							],
+							"query": [
+								{
+									"key": "oldId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchOwnerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchOwnerById?Id=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchOwnerById"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAllOwner",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchAllOwner",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchAllOwner"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteOwner",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteOwner?ownerId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteOwner"
+							],
+							"query": [
+								{
+									"key": "ownerId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddExistingRestaurantToExistingOwner",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/addExistingRestaurantToExistingOwner?ownerId=1&restaurantId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addExistingRestaurantToExistingOwner"
+							],
+							"query": [
+								{
+									"key": "ownerId",
+									"value": "1"
+								},
+								{
+									"key": "restaurantId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddNewRestaurantToExistingOwner",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"restaurantName\":\"Curd\",\r\n    \"restaurantEmail\":\"urd.kitchen@gmail.com\",\r\n\t\"restaurantGSTIN\":\"GSTIN332659833\",\r\n\t\"restaurantPhone\":8956222518\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addNewRestaurantToExistingOwner?ownerId=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addNewRestaurantToExistingOwner"
+							],
+							"query": [
+								{
+									"key": "ownerId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Employee",
+			"item": [
+				{
+					"name": "SaveEmployee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeName\": \"CCCC\",\r\n\t\"employeePhone\": 9865326634, \r\n\t\"employeeSalary\":30000,\r\n\t\"employeeRole\": \"Chef\",\r\n\t\"employeeEmail\": \"cccc@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/saveEmployee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saveEmployee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateEmployee",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"employeeName\": \"AAA\",\r\n\t\"employeePhone\": 9865329632, \r\n\t\"employeeSalary\": 18000,\r\n\t\"employeeRole\": \"Chef\",\r\n\t\"employeeEmail\": \"aaa@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateEmployee?oldId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateEmployee"
+							],
+							"query": [
+								{
+									"key": "oldId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchEmployeeById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchEmployeeById?Id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchEmployeeById"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAllEmployee",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchAllEmployee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchAllEmployee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteEmployee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteEmployee?employeeId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteEmployee"
+							],
+							"query": [
+								{
+									"key": "employeeId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "SaveRestaurant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"restaurantName\":\"DAHI's\",\r\n    \"restaurantEmail\":\"dahi.kitchen@gmail.com\",\r\n\t\"restaurantGSTIN\":\"GSTIN332659885\",\r\n\t\"restaurantPhone\":8956236518\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/saveRestaurant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saveRestaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"restaurantName\":\"AAA\",\r\n    \"restaurantEmail\":\"AbA\",\r\n\t\"restaurantGSTIN\":\"AAA\",\r\n\t\"restaurantPhone\":8956236518\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateRestaurant?oldId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateRestaurant"
+							],
+							"query": [
+								{
+									"key": "oldId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchRestaurantById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchRestaurantById?Id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchRestaurantById"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAllRestaurant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchAllRestaurant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchAllRestaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteRestaurant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteRestaurant?restaurantId=5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteRestaurant"
+							],
+							"query": [
+								{
+									"key": "restaurantId",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddExistingBranchToExistingRestaurant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/addExistingBranchToExistingRestaurant?restaurantId=1&branchId=66",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addExistingBranchToExistingRestaurant"
+							],
+							"query": [
+								{
+									"key": "restaurantId",
+									"value": "1"
+								},
+								{
+									"key": "branchId",
+									"value": "66"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddAllExistingBranchToExistingRestaurant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/addAllExistingBranchToExistingRestaurant?restaurantId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addAllExistingBranchToExistingRestaurant"
+							],
+							"query": [
+								{
+									"key": "restaurantId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FoodOrder",
+			"item": [
+				{
+					"name": "SaveFoodOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"foodName\": \"Double ka Meetha\",\r\n    \"foodPrice\": 130,\r\n    \"foodQuantity\": 1,\r\n    \"foodDiscount\": 8,\r\n    \"foodGST\": 19\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/saveFoodOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saveFoodOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"foodName\":\"AAA\",\r\n    \"foodPrice\":240,\r\n\t\"foodQuantity\":2,\r\n    \"foodDiscount\":2,\r\n\t\"foodGST\":22\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateFoodOrder?oldId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateFoodOrder"
+							],
+							"query": [
+								{
+									"key": "oldId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAllFoodOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchAllFoodOrder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchAllFoodOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchFoodOrderById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchFoodOrderById?Id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchFoodOrderById"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteFoodOrder",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteFoodOrder?foodOrderId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteFoodOrder"
+							],
+							"query": [
+								{
+									"key": "foodOrderId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Menu",
+			"item": [
+				{
+					"name": "SaveMenu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"menuType\":\"Royal Kitchen\",\r\n   \"menuTimimg\":\"All Time\",\r\n\t\"menuAvailability\":\"All Week\",\r\n\t\"noOfItems\":202\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/saveMenu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saveMenu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateMenu",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"menuType\":\"AAA\",\r\n   \"menuTimimg\":\"AAA\",\r\n\t\"menuAvailability\":\"AAA\",\r\n\t\"noOfItems\":5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateMenu?oldId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateMenu"
+							],
+							"query": [
+								{
+									"key": "oldId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchMenuById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchMenuById?Id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchMenuById"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAllMenu",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchAllMenu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchAllMenu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteMenu",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteMenu?menuId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteMenu"
+							],
+							"query": [
+								{
+									"key": "menuId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Manager",
+			"item": [
+				{
+					"name": "SaveManager",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"managerName\":\"Ridhi\",\r\n\t\"managerPhone\":9658686966,\r\n\t\"managerSalary\":12554,\r\n\t\"managerEmail\":\"ridhi@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/saveManager",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saveManager"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateManager",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"managerName\":\"AAA\",\r\n\t\"managerPhone\":9658632568,\r\n\t\"managerSalary\":12554,\r\n\t\"managerEmail\":\"aaaaaa\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateManager?oldId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateManager"
+							],
+							"query": [
+								{
+									"key": "oldId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchManagerById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchManagerById?Id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchManagerById"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAllManager",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchAllManager",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchAllManager"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteManager",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteManager?managerId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteManager"
+							],
+							"query": [
+								{
+									"key": "managerId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "SaveAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addressPlotNo\":1,\r\n\t\"addressStreet\":\"Banjara Hills KBR Rd\",\r\n\t\"addressLandmark\":\"BMW Motorad\",\r\n\t\"addressPincode\":500063,\r\n\t\"addressCity\":\"HYD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/saveAddress",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saveAddress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAddress",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addressPlotNo\":123,\r\n\t\"addressStreet\":\"AAA\",\r\n\t\"addressLandmark\":\"AAA\",\r\n\t\"addressPincode\":236598,\r\n\t\"addressCity\":\"HYD\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateAddress?oldId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateAddress"
+							],
+							"query": [
+								{
+									"key": "oldId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAddressById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchAddressById?Id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchAddressById"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAllAddress",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchAllAddress",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchAllAddress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAddress",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteAddress?addressId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteAddress"
+							],
+							"query": [
+								{
+									"key": "addressId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Branch",
+			"item": [
+				{
+					"name": "One-To-One Mappings",
+					"item": [
+						{
+							"name": "AddExistingManagerToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/addExistingManagerToExistingBranch?branchId=3&managerId=99",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addExistingManagerToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "3"
+										},
+										{
+											"key": "managerId",
+											"value": "99"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNewManagerToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"managerName\":\"Raj\",\r\n\t\"managerPhone\":9652232568,\r\n\t\"managerSalary\":12554,\r\n\t\"managerEmail\":\"raj@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/addNewManagerToExistingBranch?branchId=22",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addNewManagerToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "22"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddExistingMenuToExistingBranch?",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/addExistingMenuToExistingBranch?branchId=3&menuId=33",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addExistingMenuToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "3"
+										},
+										{
+											"key": "menuId",
+											"value": "33"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNewMenuToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"menuType\":\"Mix 2\",\r\n   \"menuTimimg\":\"Lunch\",\r\n\t\"menuAvailability\":\"All Week\",\r\n\t\"noOfItems\":110\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/addNewMenuToExistingBranch?branchId=10",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addNewMenuToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNewAddressToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"addressPlotNo\":555,\r\n\t\"addressStreet\":\"Dilsukhnagar\",\r\n\t\"addressLandmark\":\"Saroornagar Lake\",\r\n\t\"addressPincode\":500060,\r\n\t\"addressCity\":\"HYD\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/addNewAddressToExistingBranch?branchId=9",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addNewAddressToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "9"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddExistingAddressToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/addExistingAddressToExistingBranch?branchId=3&addressId=33",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addExistingAddressToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "3"
+										},
+										{
+											"key": "addressId",
+											"value": "33"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "One-To-Many Mappings",
+					"item": [
+						{
+							"name": "AddExistingEmployeeToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/addExistingEmployeeToExistingBranch?branchId=3&employeeId=122",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addExistingEmployeeToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "3"
+										},
+										{
+											"key": "employeeId",
+											"value": "122"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNewEmployeeToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"employeeName\": \"EEE\",\r\n\t\"employeePhone\": 9866355632, \r\n\t\"employeeSalary\": 7000,\r\n\t\"employeeRole\": \"Jr cleaner\",\r\n\t\"employeeEmail\": \"eee@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/addNewEmployeeToExistingBranch?branchId=22",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addNewEmployeeToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "22"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddAllExistingEmployeeToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/addAllExistingEmployeeToExistingBranch?branchId=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addAllExistingEmployeeToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddNewCustomerToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"customerName\": \"Mrs Adolf\" ,\r\n\t\"customerPhone\": 9599212111 ,\r\n\t\"customerFeedback\": \"spicyyyy and sweet\" ,\r\n\t\"customerEmail\":\"mrs.hailgermanygmail.com\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/addNewCustomerToExistingBranch?branchId=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addNewCustomerToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddExistingCustomerToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/addExistingCustomerToExistingBranch?branchId=3&customerId=6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addExistingCustomerToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "3"
+										},
+										{
+											"key": "customerId",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AddAllExistingCustomerToExistingBranch",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/addAllExistingCustomerToExistingBranch?branchId=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"addAllExistingCustomerToExistingBranch"
+									],
+									"query": [
+										{
+											"key": "branchId",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "SaveBranch",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branchName\":\"BanjaraHills\",\r\n\t\"branchEmail\":\"dahi.banjarahills@gmail.com\",\r\n\t\"branchRevenue\":5200000,\r\n\t\"branchPhone\":8956237419\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/saveBranch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"saveBranch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateBranch",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"branchName\":\"Chaitaniyapuri\",\r\n\t\"branchEmail\":\"dahi.chaitaniyapuri@gmail.com\",\r\n\t\"branchRevenue\":125632,\r\n\t\"branchPhone\":8956237415\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/updateBranch?oldId=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateBranch"
+							],
+							"query": [
+								{
+									"key": "oldId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAddressById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchBranchById?Id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchBranchById"
+							],
+							"query": [
+								{
+									"key": "Id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FetchAllBranch",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/fetchAllBranch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"fetchAllBranch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteBranch",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteBranch?branchId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteBranch"
+							],
+							"query": [
+								{
+									"key": "branchId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
